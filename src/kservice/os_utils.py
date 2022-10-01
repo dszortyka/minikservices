@@ -6,15 +6,44 @@ from prettytable import PrettyTable
 def run_command(operation=None, args=None, service_list=None):
 
 
-    
-
-    #os.system("nohup minikube service argocd-server --url -n argocd > /tmp/argocd.out 2>&1 &")
-    # ps aux|egrep "minikube service argocd-server --url -n argocd"|egrep -v egrep|awk '{print $2}'|xargs kill -9
-    # pgrep -f "minikube service simple-flask-app --url -n flaskapp"|xargs kill -9
     if operation == "start":
-        pass
+        
+        print("Start services: ", args['start'][0])
+
+        required_services = ""
+
+        if ',' in args['start'][0]:
+            required_services = str(args['start'][0]).split(',')
+        else:
+            required_services = args['start']
+
+        print(required_services)
+
+        print("Namespace: ", args['namespace'])
+
+        for service in service_list:
+            if (args['namespace'] is False):
+                print("namespace eh falso")
+                if service.name in required_services:
+                    print("inicia servico na namespace: ", service.namespace)
+                    command = f"nohup minikube service {service.name} --url -n {service.namespace} > /tmp/.kservice.{service.namespace}.{service.name}.out 2>&1 &"
+                    os.system(command)
+            else:
+                print("namespace foi informado")
+                if (service.name in required_services) and (args['namespace'] == service.namespace):
+                    print("Inicia servico dentro da namespace", service.namespace)
+                    command = f"nohup minikube service {service.name} --url -n {service.namespace} > /tmp/.kservice.{service.namespace}.{service.name}.out 2>&1 &"
+                    os.system(command)
+
+        # for arg in args['start']:
+        #     print("arg: ", arg)
+
     if operation == "stop":
         print("running stop operation")
+
+
+
+
     if operation == "startall":
         for service in service_list:
             command = f"nohup minikube service {service.name} --url -n {service.namespace} > /tmp/.kservice.{service.namespace}.{service.name}.out 2>&1 &"
@@ -22,7 +51,7 @@ def run_command(operation=None, args=None, service_list=None):
             if (args['namespace'] is not False):
                 if (args['namespace'] == service.namespace):
                     os.system(command)
-                    continue
+                    #continue
             else:
                 # if no namespace provided, start all services              
                 os.system(command)
@@ -72,7 +101,7 @@ def show_status(service_list=None):
 
 
         tmp_file = f"/tmp/.kservice.{namespace}.{service_name}.out"
-        
+
         if os.path.exists(tmp_file):
             with open(tmp_file, "r") as a_file:
                 for line in a_file:

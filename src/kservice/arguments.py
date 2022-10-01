@@ -12,9 +12,10 @@ def parse_arguments():
 
     group2.add_argument('--startall', help='Start all services', action='store_true', default=False)
     group2.add_argument('--stopall', help='Stop all services', action='store_true', default=False)
-    group2.add_argument('-n','--namespace', help='Specificy --namespace when using start or stop all', default=False)
-
+    
+    
     parser.add_argument('--status', help='Show current service status', action='store_true', default=False)
+    parser.add_argument('-n','--namespace', help='Specificy --namespace', default=False)
 
    
     return parser
