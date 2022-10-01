@@ -8,14 +8,6 @@ class Service:
         self.namespace = namespace
         self.name = name
 
-    def start_service(self, all_services=False):
-        pass
-
-    def stop_service(self, all_services=False):
-        pass
-
-
-
 
 class MK:
     def __init__(self, host=None):
