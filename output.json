@@ -1,0 +1,1480 @@
+{'api_version': None,
+ 'kind': None,
+ 'metadata': 
+    {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "controller",
+                        "app.kubernetes.io/name": "argocd-applicationset-controller",
+                        "app.kubernetes.io/part-of": "argocd-applicationset"
+                    },
+                    "name": "argocd-applicationset-controller",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "webhook",
+                            "port": 7000,
+                            "protocol": "TCP",
+                            "targetPort": "webhook"
+                        },
+                        {
+                            "name": "metrics",
+                            "port": 8080,
+                            "protocol": "TCP",
+                            "targetPort": "metrics"
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-applicationset-controller"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'controller',
+                         'app.kubernetes.io/name': 'argocd-applicationset-controller',
+                         'app.kubernetes.io/part-of': 'argocd-applicationset'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 7000,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 8080,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-applicationset-controller',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '648',
+              'self_link': None,
+              'uid': '3de5abdc-a42c-4c30-9cab-2238de7e40b8'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.101.38.220'
+        ],
+          'cluster_ip': '10.101.38.220',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'webhook',
+                     'node_port': None,
+                     'port': 7000,
+                     'protocol': 'TCP',
+                     'target_port': 'webhook'
+            },
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 8080,
+                     'protocol': 'TCP',
+                     'target_port': 'metrics'
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-applicationset-controller'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "dex-server",
+                        "app.kubernetes.io/name": "argocd-dex-server",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-dex-server",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "http",
+                            "port": 5556,
+                            "protocol": "TCP",
+                            "targetPort": 5556
+                        },
+                        {
+                            "name": "grpc",
+                            "port": 5557,
+                            "protocol": "TCP",
+                            "targetPort": 5557
+                        },
+                        {
+                            "name": "metrics",
+                            "port": 5558,
+                            "protocol": "TCP",
+                            "targetPort": 5558
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-dex-server"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'dex-server',
+                         'app.kubernetes.io/name': 'argocd-dex-server',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 5556,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 5557,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 5558,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-dex-server',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '652',
+              'self_link': None,
+              'uid': '8eab3a02-3b5b-48e0-aa1e-ac29cb1ad256'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.110.139.152'
+        ],
+          'cluster_ip': '10.110.139.152',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'http',
+                     'node_port': None,
+                     'port': 5556,
+                     'protocol': 'TCP',
+                     'target_port': 5556
+            },
+            {'app_protocol': None,
+                     'name': 'grpc',
+                     'node_port': None,
+                     'port': 5557,
+                     'protocol': 'TCP',
+                     'target_port': 5557
+            },
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 5558,
+                     'protocol': 'TCP',
+                     'target_port': 5558
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-dex-server'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "metrics",
+                        "app.kubernetes.io/name": "argocd-metrics",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-metrics",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "metrics",
+                            "port": 8082,
+                            "protocol": "TCP",
+                            "targetPort": 8082
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-application-controller"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'metrics',
+                         'app.kubernetes.io/name': 'argocd-metrics',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 8082,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-metrics',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '656',
+              'self_link': None,
+              'uid': '23df811c-0acd-4b01-bd2d-b05d3a8def5c'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.111.58.221'
+        ],
+          'cluster_ip': '10.111.58.221',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 8082,
+                     'protocol': 'TCP',
+                     'target_port': 8082
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-application-controller'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/name": "argocd-notifications-controller-metrics"
+                    },
+                    "name": "argocd-notifications-controller-metrics",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "metrics",
+                            "port": 9001,
+                            "protocol": "TCP",
+                            "targetPort": 9001
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-notifications-controller"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/name': 'argocd-notifications-controller-metrics'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/name': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 9001,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-notifications-controller-metrics',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '660',
+              'self_link': None,
+              'uid': '296b95b8-fb27-4ad6-b60b-94759a46dd8a'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.98.203.27'
+        ],
+          'cluster_ip': '10.98.203.27',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 9001,
+                     'protocol': 'TCP',
+                     'target_port': 9001
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-notifications-controller'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "redis",
+                        "app.kubernetes.io/name": "argocd-redis",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-redis",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "tcp-redis",
+                            "port": 6379,
+                            "targetPort": 6379
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-redis"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'redis',
+                         'app.kubernetes.io/name': 'argocd-redis',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 6379,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-redis',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '664',
+              'self_link': None,
+              'uid': 'b304e92c-02a8-4a6f-8a5c-e46c15be4915'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.104.90.139'
+        ],
+          'cluster_ip': '10.104.90.139',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'tcp-redis',
+                     'node_port': None,
+                     'port': 6379,
+                     'protocol': 'TCP',
+                     'target_port': 6379
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-redis'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "repo-server",
+                        "app.kubernetes.io/name": "argocd-repo-server",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-repo-server",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "server",
+                            "port": 8081,
+                            "protocol": "TCP",
+                            "targetPort": 8081
+                        },
+                        {
+                            "name": "metrics",
+                            "port": 8084,
+                            "protocol": "TCP",
+                            "targetPort": 8084
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-repo-server"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'repo-server',
+                         'app.kubernetes.io/name': 'argocd-repo-server',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 8081,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 8084,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-repo-server',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '668',
+              'self_link': None,
+              'uid': '91b51b2e-1b69-4d5d-a553-dd3b03206d9a'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.105.222.72'
+        ],
+          'cluster_ip': '10.105.222.72',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'server',
+                     'node_port': None,
+                     'port': 8081,
+                     'protocol': 'TCP',
+                     'target_port': 8081
+            },
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 8084,
+                     'protocol': 'TCP',
+                     'target_port': 8084
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-repo-server'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "server",
+                        "app.kubernetes.io/name": "argocd-server",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-server",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "http",
+                            "port": 80,
+                            "protocol": "TCP",
+                            "targetPort": 8080
+                        },
+                        {
+                            "name": "https",
+                            "port": 443,
+                            "protocol": "TCP",
+                            "targetPort": 8080
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-server"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'server',
+                         'app.kubernetes.io/name': 'argocd-server',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 443,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                           'f:name': {},
+                                                                                                           'f:port': {},
+                                                                                                           'f:protocol': {},
+                                                                                                           'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 80,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                          'f:name': {},
+                                                                                                          'f:port': {},
+                                                                                                          'f:protocol': {},
+                                                                                                          'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-server',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '672',
+              'self_link': None,
+              'uid': '820053f1-18ee-4c60-bfe1-547f4ee64086'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.96.4.156'
+        ],
+          'cluster_ip': '10.96.4.156',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'http',
+                     'node_port': None,
+                     'port': 80,
+                     'protocol': 'TCP',
+                     'target_port': 8080
+            },
+            {'app_protocol': None,
+                     'name': 'https',
+                     'node_port': None,
+                     'port': 443,
+                     'protocol': 'TCP',
+                     'target_port': 8080
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-server'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/component": "server",
+                        "app.kubernetes.io/name": "argocd-server-metrics",
+                        "app.kubernetes.io/part-of": "argocd"
+                    },
+                    "name": "argocd-server-metrics",
+                    "namespace": "argocd"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "name": "metrics",
+                            "port": 8083,
+                            "protocol": "TCP",
+                            "targetPort": 8083
+                        }
+                    ],
+                    "selector": {
+                        "app.kubernetes.io/name": "argocd-server"
+                    }
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        2,
+        53, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/component': 'server',
+                         'app.kubernetes.io/name': 'argocd-server-metrics',
+                         'app.kubernetes.io/part-of': 'argocd'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/component': {},
+                                                                            'f:app.kubernetes.io/name': {},
+                                                                            'f:app.kubernetes.io/part-of': {}
+                        }
+                    },
+                                                'f:spec': {'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 8083,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubectl-client-side-apply',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                2,
+                53, tzinfo=tzutc())
+            }
+        ],
+              'name': 'argocd-server-metrics',
+              'namespace': 'argocd',
+              'owner_references': None,
+              'resource_version': '676',
+              'self_link': None,
+              'uid': 'ee55b75e-e2b4-42ed-8159-458d58f40173'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.96.203.234'
+        ],
+          'cluster_ip': '10.96.203.234',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 8083,
+                     'protocol': 'TCP',
+                     'target_port': 8083
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app.kubernetes.io/name': 'argocd-server'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': None,
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        1,
+        13, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'component': 'apiserver', 'provider': 'kubernetes'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:labels': {'.': {},
+                                                                            'f:component': {},
+                                                                            'f:provider': {}
+                        }
+                    },
+                                                'f:spec': {'f:clusterIP': {},
+                                                           'f:internalTrafficPolicy': {},
+                                                           'f:ipFamilyPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 443,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                           'f:name': {},
+                                                                                                           'f:port': {},
+                                                                                                           'f:protocol': {},
+                                                                                                           'f:targetPort': {}
+                            }
+                        },
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kube-apiserver',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                1,
+                13, tzinfo=tzutc())
+            }
+        ],
+              'name': 'kubernetes',
+              'namespace': 'default',
+              'owner_references': None,
+              'resource_version': '196',
+              'self_link': None,
+              'uid': '88499a2e-3a57-4683-ac57-5a60f695ca19'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.96.0.1'
+        ],
+          'cluster_ip': '10.96.0.1',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'https',
+                     'node_port': None,
+                     'port': 443,
+                     'protocol': 'TCP',
+                     'target_port': 8443
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': None,
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'kubectl.kubernetes.io/last-applied-configuration': '{
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "annotations": {},
+                    "labels": {
+                        "app.kubernetes.io/instance": "simple-flask-app"
+                    },
+                    "name": "simple-flask-app",
+                    "namespace": "flaskapp"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "port": 8585
+                        }
+                    ],
+                    "selector": {
+                        "app": "simple-flask-app"
+                    },
+                    "type": "NodePort"
+                }
+            }\n'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        30,
+        0,
+        46,
+        44, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'app.kubernetes.io/instance': 'simple-flask-app'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:kubectl.kubernetes.io/last-applied-configuration': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:app.kubernetes.io/instance': {}
+                        }
+                    },
+                                                'f:spec': {'f:externalTrafficPolicy': {},
+                                                           'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 8585,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'argocd-application-controller',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                30,
+                0,
+                46,
+                44, tzinfo=tzutc())
+            }
+        ],
+              'name': 'simple-flask-app',
+              'namespace': 'flaskapp',
+              'owner_references': None,
+              'resource_version': '81201',
+              'self_link': None,
+              'uid': 'f95b8e3d-e0c5-4ecd-b8fd-1ba0ef22545f'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.96.196.135'
+        ],
+          'cluster_ip': '10.96.196.135',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': 'Cluster',
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': None,
+                     'node_port': 31890,
+                     'port': 8585,
+                     'protocol': 'TCP',
+                     'target_port': 8585
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'app': 'simple-flask-app'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'NodePort'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
+{'api_version': None,
+ 'kind': None,
+ 'metadata': {'annotations': {'prometheus.io/port': '9153',
+                              'prometheus.io/scrape': 'true'
+        },
+              'cluster_name': None,
+              'creation_timestamp': datetime.datetime(2022,
+        9,
+        28,
+        17,
+        1,
+        15, tzinfo=tzutc()),
+              'deletion_grace_period_seconds': None,
+              'deletion_timestamp': None,
+              'finalizers': None,
+              'generate_name': None,
+              'generation': None,
+              'labels': {'k8s-app': 'kube-dns',
+                         'kubernetes.io/cluster-service': 'true',
+                         'kubernetes.io/name': 'CoreDNS'
+        },
+              'managed_fields': [
+            {'api_version': 'v1',
+                                  'fields_type': 'FieldsV1',
+                                  'fields_v1': {'f:metadata': {'f:annotations': {'.': {},
+                                                                                 'f:prometheus.io/port': {},
+                                                                                 'f:prometheus.io/scrape': {}
+                        },
+                                                               'f:labels': {'.': {},
+                                                                            'f:k8s-app': {},
+                                                                            'f:kubernetes.io/cluster-service': {},
+                                                                            'f:kubernetes.io/name': {}
+                        }
+                    },
+                                                'f:spec': {'f:clusterIP': {},
+                                                           'f:internalTrafficPolicy': {},
+                                                           'f:ports': {'.': {},
+                                                                       'k: {
+                                "port": 53,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                          'f:name': {},
+                                                                                                          'f:port': {},
+                                                                                                          'f:protocol': {},
+                                                                                                          'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 53,
+                                "protocol": "UDP"
+                            }': {'.': {},
+                                                                                                          'f:name': {},
+                                                                                                          'f:port': {},
+                                                                                                          'f:protocol': {},
+                                                                                                          'f:targetPort': {}
+                            },
+                                                                       'k: {
+                                "port": 9153,
+                                "protocol": "TCP"
+                            }': {'.': {},
+                                                                                                            'f:name': {},
+                                                                                                            'f:port': {},
+                                                                                                            'f:protocol': {},
+                                                                                                            'f:targetPort': {}
+                            }
+                        },
+                                                           'f:selector': {},
+                                                           'f:sessionAffinity': {},
+                                                           'f:type': {}
+                    }
+                },
+                                  'manager': 'kubeadm',
+                                  'operation': 'Update',
+                                  'subresource': None,
+                                  'time': datetime.datetime(2022,
+                9,
+                28,
+                17,
+                1,
+                15, tzinfo=tzutc())
+            }
+        ],
+              'name': 'kube-dns',
+              'namespace': 'kube-system',
+              'owner_references': None,
+              'resource_version': '243',
+              'self_link': None,
+              'uid': 'e4ce6c23-7603-47ab-8100-782c1dc92e08'
+    },
+ 'spec': {'allocate_load_balancer_node_ports': None,
+          'cluster_i_ps': ['10.96.0.10'
+        ],
+          'cluster_ip': '10.96.0.10',
+          'external_i_ps': None,
+          'external_name': None,
+          'external_traffic_policy': None,
+          'health_check_node_port': None,
+          'internal_traffic_policy': 'Cluster',
+          'ip_families': ['IPv4'
+        ],
+          'ip_family_policy': 'SingleStack',
+          'load_balancer_class': None,
+          'load_balancer_ip': None,
+          'load_balancer_source_ranges': None,
+          'ports': [
+            {'app_protocol': None,
+                     'name': 'dns',
+                     'node_port': None,
+                     'port': 53,
+                     'protocol': 'UDP',
+                     'target_port': 53
+            },
+            {'app_protocol': None,
+                     'name': 'dns-tcp',
+                     'node_port': None,
+                     'port': 53,
+                     'protocol': 'TCP',
+                     'target_port': 53
+            },
+            {'app_protocol': None,
+                     'name': 'metrics',
+                     'node_port': None,
+                     'port': 9153,
+                     'protocol': 'TCP',
+                     'target_port': 9153
+            }
+        ],
+          'publish_not_ready_addresses': None,
+          'selector': {'k8s-app': 'kube-dns'
+        },
+          'session_affinity': 'None',
+          'session_affinity_config': None,
+          'type': 'ClusterIP'
+    },
+ 'status': {'conditions': None, 'load_balancer': {'ingress': None
+        }
+    }
+}
