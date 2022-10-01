@@ -1,5 +1,6 @@
 import os
 from kservice.colors import bcolors
+from prettytable import PrettyTable
 
 # minikube service argocd-server --url -n argocd
 def run_command(operation=None, args=None, service_list=None):
@@ -39,28 +40,17 @@ def run_command(operation=None, args=None, service_list=None):
                     os.system(del_file_command)
                     continue
             else:
-                # if no namespace provided, stop all services
+                # if no namespace provided, stop all services in mikube
                 os.system(kill_command)
                 os.system(del_file_command)
 
 
     if operation == "status":
-        print("show status")
+        show_status(service_list)
     
 
 
-def delete_tmp_file(name=None, namespace=None):
-    kill_command = f"pgrep -f \"minikube service {name} --url -n {namespace}\"|xargs kill -9"
-    del_file_command = f"rm -f /tmp/.kservice.{namespace}.{name}.out"
-    try:
-        os.system(kill_command)
-    except:
-        print("Failed to kill the process.")
-    
-    try:
-        os.system(del_file_command)
-    except:
-        print("Failed to delete temp file.")
+
 
 
 def print_colored(msg=None):
@@ -68,3 +58,29 @@ def print_colored(msg=None):
 
 def print_error(msg=None):
     print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
+
+
+
+
+def show_status(service_list=None):
+    
+    t = PrettyTable(['Namespace', 'Service Name', 'URL'])
+
+    for service in service_list:
+        service_name = service.name
+        namespace = service.namespace
+
+
+        tmp_file = f"/tmp/.kservice.{namespace}.{service_name}.out"
+        
+        if os.path.exists(tmp_file):
+            with open(tmp_file, "r") as a_file:
+                for line in a_file:
+                    stripped_line = line.strip()
+                    if "http" in stripped_line:
+                        t.add_row([namespace, service_name, stripped_line])
+            a_file.close()
+        else:
+            t.add_row([namespace, service_name, ""])
+
+    print(t)
