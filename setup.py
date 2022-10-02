@@ -10,11 +10,14 @@ here = pathlib.Path(__file__).parent.resolve()
 # Get the long description from the README file
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
+requirements = (here / "requirements.txt").read_text(encoding="utf-8")
+
+
 
 setup(
 
     name="minikservices",
-    version="0.0.2",
+    version="0.0.3",
     license='MIT',
     description="App to start, stop and view minikube services easily.",
     long_description = long_description,
@@ -39,6 +42,7 @@ setup(
     keywords="minikube, k8s, minikube services",
     package_dir={"": "src"},  
     packages=find_packages(where="src"),
+    install_requires=requirements,
     python_requires=">=3.9, <4",
     
     entry_points={  
