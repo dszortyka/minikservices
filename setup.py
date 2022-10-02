@@ -14,8 +14,10 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 setup(
 
     name="minikservices",
-    version="0.0.1",
+    version="0.0.2",
+    license='MIT',
     description="App to start, stop and view minikube services easily.",
+    long_description = long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dszortyka/minikservices",  
     author="Daniel Szortyka",  
