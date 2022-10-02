@@ -17,7 +17,7 @@ requirements = (here / "requirements.txt").read_text(encoding="utf-8")
 setup(
 
     name="minikservices",
-    version="0.0.5",
+    version="0.0.6",
     license='MIT',
     description="App to start, stop and view minikube services easily.",
     long_description = long_description,
