@@ -17,7 +17,7 @@ requirements = (here / "requirements.txt").read_text(encoding="utf-8")
 setup(
 
     name="minikservices",
-    version="0.0.4",
+    version="0.0.5",
     license='MIT',
     description="App to start, stop and view minikube services easily.",
     long_description = long_description,
@@ -43,6 +43,8 @@ setup(
     package_dir={"": "src"},  
     packages=find_packages(where="src"),
     install_requires=[
+        'setuptools',
+        'wheel',
         'kubernetes==24.2.0',
         'prettytable==3.4.1'
     ],
