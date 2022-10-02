@@ -39,7 +39,7 @@ setup(
     keywords="minikube, k8s, minikube services",
     package_dir={"": "src"},  
     packages=find_packages(where="src"),
-    python_requires=">=3.7, <4",
+    python_requires=">=3.9, <4",
     
     entry_points={  
         "console_scripts": [
